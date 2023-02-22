@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Liste des films populaires</title>
+  </head>
+  <body>
+    <h1>Liste des films populaires</h1>
+    <ul>
+      <% @movies.each do |movie| %>
+        <li>
+          <%= movie['title'] %>
+          <img src="https://image.tmdb.org/t/p/w500<%= movie['poster_path'] %>" alt="<%= movie['title'] %>">
+        </li>
+      <% end %>
+    </ul>
+  </body>
+</html>
