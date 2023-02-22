@@ -1,2 +1,20 @@
-<h1>Games#index</h1>
-<p>Find me in app/views/games/index.html.erb</p>
+<h1>Liste des jeux</h1>
+
+<% if @games %>
+  <% @games.each do |game| %>
+    <div>
+      <h2><%= game.name %></h2>
+      <p>Année de production : <%= game.year %></p>
+      <img src="<%= game.image %>">
+    </div>
+  <% end %>
+<% else %>
+  <p>Aucun jeu n'a été trouvé.</p>
+<% end %>
+
+<% if @error %>
+  <p>Une erreur est survenue : <%= @error %></p>
+<% end %>
+
+<% puts "DEBUG: @games = #{@games.inspect}" %>
+<% puts "DEBUG: @error = #{@error.inspect}" %>

@@ -1,9 +1,4 @@
-<% require 'httparty'
-url = "https://api.themoviedb.org/3/movie/popular"
-response = HTTParty.get(url, query: { api_key: ENV['TMDB_API_KEY'] })
-puts response.body
-=%>
-
 <h1>Pages#home</h1>
 <p>Find me in app/views/pages/home.html.erb</p>
-Hello, on arrive, on fait des trucs
+
+<a href="/games/index">Jeux vidéo</a>
