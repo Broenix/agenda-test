@@ -1,0 +1,10 @@
+<% @works.each do |work| %>
+  <div class="work">
+    <%= image_tag work.image, class: "work-image" %>
+    <div class="work-info">
+      <h3><%= work.name %></h3>
+      <p><strong>Année de sortie :</strong> <%= work.year %></p>
+      <p><strong>Créateur :</strong> <%= work.creator %></p>
+    </div>
+  </div>
+<% end %>

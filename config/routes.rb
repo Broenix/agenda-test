@@ -12,6 +12,7 @@ Rails.application.routes.draw do
   resources :games, only: [:index]
   resources :movies, only: [:index]
   resources :tv_shows, only: [:index]
+  resources :works, only: [:index, :new, :create, ]
   get '/search', to: 'search#index'
 
 end

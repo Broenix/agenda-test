@@ -1,2 +1,41 @@
 // Import page-specific CSS files here.
 @import "home";
+
+.work-container {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.work {
+  width: 300px;
+  margin: 10px;
+  padding: 10px;
+  border: 1px solid black;
+}
+
+.work-image {
+  width: 100%;
+  // height: auto;
+  // object-fit: cover;
+}
+
+
+.work-info {
+  margin-top: 10px;
+}
+
+.work-info h3 {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.work-info p {
+  margin: 0;
+  font-size: 1rem;
+}
+
+.work:hover {
+  transform: translateY(-2px);
+  cursor: pointer;
+}
+

@@ -1,0 +1,27 @@
+<h1>Liste des œuvres connues</h1>
+
+<div class="search-container">
+  <%= form_tag works_path, method: :get, remote: true do %>
+    <%= text_field_tag :search, params[:search], placeholder: "Rechercher une œuvre" %>
+    <%= submit_tag "Rechercher", name: nil %>
+  <% end %>
+</div>
+
+
+
+<div class="work-container">
+  <% @works.each do |work| %>
+    <div class="work">
+      <%= image_tag work.image, class: "work-image" %>
+      <div class="work-info">
+        <h3><%= work.name %></h3>
+        <p><strong>Année de sortie :</strong> <%= work.year %></p>
+        <p><strong>Créateur :</strong> <%= work.creator %></p>
+      </div>
+    </div>
+  <% end %>
+</div>
+
+
+
+<%= link_to "Ajouter une œuvre", new_work_path %>
