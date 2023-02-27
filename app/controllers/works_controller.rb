@@ -3,7 +3,11 @@ class WorksController < ApplicationController
 
   def index
     if params[:query].present?
-      @works = Work.search_by_name(params[:query])
+      sql_query = <<~SQL
+       works.name @@ :query
+       OR works.creator ILIKE :query
+       SQL
+      @works = Work.where(sql_query, query: "%#{params[:query]}%")
     else
       @works = Work.all
     end
