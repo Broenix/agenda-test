@@ -1,31 +1,31 @@
 <h1>Liste des œuvres connues</h1>
 
-<div class="search-container">
-<%= form_with url: works_path, method: :get, class: "d-flex" do %>
-  <%= text_field_tag :query,
-    params[:query],
-    class: "form-control",
-    placeholder: "Find a movie"
-  %>
-  <%= submit_tag "Search", class: "btn btn-primary" %>
-<% end %>
-</div>
-
-
-
-<div class="work-container">
-  <% @works.each do |work| %>
-    <div class="work">
-      <%= image_tag work.image, class: "work-image" %>
-      <div class="work-info">
-        <h3><%= work.name %></h3>
-        <p><strong>Année de sortie :</strong> <%= work.year %></p>
-        <p><strong>Créateur :</strong> <%= work.creator %></p>
-      </div>
-    </div>
+<div class="container">
+  <div class="search-form">
+  <%= form_with url: works_path, method: :get, class: "d-flex" do %>
+    <%= text_field_tag :query,
+      params[:query],
+      class: "form-control",
+      placeholder: "Find a movie"
+    %>
+    <%= submit_tag "Search", class: "btn btn-primary" %>
   <% end %>
+  </div>
+
+
+
+  <div class="works">
+    <% @works.each do |work| %>
+      <div class="work">
+        <%= image_tag work.image, class: "work-image" %>
+        <div class="work-info">
+          <h3><%= work.name %></h3>
+          <p><strong>Année de sortie :</strong> <%= work.year %></p>
+          <p><strong>Créateur :</strong> <%= work.creator %></p>
+        </div>
+      </div>
+    <% end %>
+  </div>
 </div>
-
-
 
 <%= link_to "Ajouter une œuvre", new_work_path %>
